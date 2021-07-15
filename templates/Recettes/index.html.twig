@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des Recettes{% endblock %}
+
+{% block body %}
+ {% if Recettes %}
+    <table id="Recettes" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Niveau</th>
+          
+          <th>Temps de preparation</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for recette in Recettes %}
+          <tr>
+            <td>{{ recette.nom }}</td>
+            <td>{{ recette.Niveau }}</td>
+            <td>{{ recette.Tempsdepreparation }}</td>
+
+            <td>
+               <a href="/Recettes/{{ recette.id }}" class="btn btn-dark">Détails</a>
+               <a href="/Recettes/edit/{{ recette.id }}" class="btn btn-dark">Modifier</a>
+               <a href="/Recettes/delete/{{ recette.id }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de supprimer cette recette?');">Supprimer</a>
+             
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Aucune recette</p>
+  {% endif %} 
+{% endblock %}

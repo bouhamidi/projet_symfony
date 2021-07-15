@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ Recettes.Nom }}{% endblock %}
+{% block body %}
+<h1><div class="row justify-content-md-center">{{ Recettes.Nom }} </div> </h1>
+<h5><div class="col-md-2 ml-md-auto">{{ Recettes.Niveau }}</div></h5>
+
+
+ <div class="card">
+</br>
+<h5>Description</h5>
+<p>{{ Recettes.Description }}</p> </br></div>
+
+<div class="card">
+</br>
+<h5>Materiel</h5>
+<p>{{ Recettes.Materiel }}</p></br><div>
+
+<div class="card">
+</br>
+<h5>Instructions</h5>
+<p>{{ Recettes.Instructions }}</p></br></div>
+
+<a href="/">Retour</a>
+{% endblock %}
